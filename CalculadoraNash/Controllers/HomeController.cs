@@ -37,39 +37,5 @@ namespace CalculadoraNash.Controllers
             
             return View("Calculadora", calculadoraViewModel);
         }
-
-        //public ActionResult Calcular(PacienteViewModel pacienteViewModel)
-        //{
-        //    pacienteViewModel.Indices.Add(new IndiceViewModel
-        //    {
-        //        Nome = "FIB-4",
-        //        Score = IndiceViewModel.CalculaFib4(pacienteViewModel.DadosPaciente),
-        //        Observacao = "Nada."
-        //    });
-
-        //    pacienteViewModel.Indices.Add(new IndiceViewModel
-        //    {
-        //        Nome = "BARD",
-        //        Score = IndiceViewModel.CalculaBard(pacienteViewModel.DadosPaciente),
-        //        Observacao = "Nada."
-        //    });
-
-        //    pacienteViewModel.Indices.Add(new IndiceViewModel
-        //    {
-        //        Nome = "NAFLD FIBROSIS",
-        //        Score = IndiceViewModel.CalculaNafld(pacienteViewModel.DadosPaciente),
-        //        Observacao = "Nada."
-        //    });
-
-        //    pacienteViewModel.Indices.Add(new IndiceViewModel
-        //    {
-        //        Nome = "APRI",
-        //        Score = IndiceViewModel.CalculaApri(pacienteViewModel.DadosPaciente),
-        //        Observacao = "nada."
-        //    });
-
-        //    return View("Calculadora", pacienteViewModel);
-        //}
-
     }
 }

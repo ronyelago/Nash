@@ -59,10 +59,5 @@ namespace CalculadoraNash.Models
 
             return Math.Round((n1 + n2 + n3 + n4 - n5 - n6 - 1.675), 2);
         }
-
-        public static double CalculaApri(DadosPaciente dp)
-        {
-            return Math.Round((dp.AST / 35) * 100 / (dp.Plaquetas) * 100) / 100;
-        }
     }
 }

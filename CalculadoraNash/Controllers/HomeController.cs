@@ -37,13 +37,6 @@ namespace CalculadoraNash.Controllers
                 Observacao = "Nada."
             });
 
-            paciente.Indices.Add(new Indice
-            {
-                Calculo = "APRI",
-                Score = Indice.CalculaApri(paciente.DadosPaciente),
-                Observacao = "nada."
-            });
-
             return View("Calculadora", paciente);
         }
 

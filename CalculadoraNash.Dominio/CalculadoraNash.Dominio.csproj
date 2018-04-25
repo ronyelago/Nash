@@ -45,7 +45,7 @@
     <Compile Include="Entities\Indices\IndiceApri.cs" />
     <Compile Include="Entities\Indices\IndiceNafld.cs" />
     <Compile Include="Entities\Indices\IndiceBard.cs" />
-    <Compile Include="Entities\Indices\Indice.cs" />
+    <Compile Include="Entities\Indices\IIndice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CalculoDeIndiceService.cs" />
     <Compile Include="ValueObject\ResultadoCalculo.cs" />

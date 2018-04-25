@@ -1,0 +1,5 @@
+C:\dev\Nash\CalculadoraNash.Dominio\bin\Debug\CalculadoraNash.Dominio.dll
+C:\dev\Nash\CalculadoraNash.Dominio\bin\Debug\CalculadoraNash.Dominio.pdb
+C:\dev\Nash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.csprojResolveAssemblyReference.cache
+C:\dev\Nash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.dll
+C:\dev\Nash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.pdb

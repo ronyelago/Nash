@@ -1,0 +1,135 @@
+﻿@model CalculadoraNash.Models.Paciente
+
+@using (Html.BeginForm(actionName: "Calcular", controllerName: "Home")) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Dados do Paciente</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.DadosPaciente.AST, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DadosPaciente.AST, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DadosPaciente.AST, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DadosPaciente.ALT, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DadosPaciente.ALT, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DadosPaciente.ALT, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DadosPaciente.IMC, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DadosPaciente.IMC, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DadosPaciente.IMC, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DadosPaciente.Diabetico, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.DadosPaciente.Diabetico)
+                    @Html.ValidationMessageFor(model => model.DadosPaciente.Diabetico, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DadosPaciente.Idade, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DadosPaciente.Idade, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DadosPaciente.Idade, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DadosPaciente.Plaquetas, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DadosPaciente.Plaquetas, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DadosPaciente.Plaquetas, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DadosPaciente.Albumina, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DadosPaciente.Albumina, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DadosPaciente.Albumina, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Calcular" id="Calcular" class="btn btn-success"/>
+                <button type="button" id="Limpar" onclick="Limpar()" class="btn btn-danger">Limpar</button>
+            </div>
+        </div>
+
+        @*Resultado dos cálculos*@
+        <div id="Resultados">
+            <div class="row">
+                <div class="col-8" id="resultados">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Cálculo</th>
+                                <th scope="col">Score</th>
+                                <th scope="col">Observação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.Indices != null)
+                            {
+                                 foreach (var risco in Model.Indices)
+                                 {
+                                    <tr>
+                                        <td id="Calculo">@risco.Calculo</td>
+                                        <td id="Score">@risco.Score</td>
+                                        <td id="Observacao">@risco.Observacao</td>
+                                    </tr>
+
+                                 }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+}
+
+
+@section Scripts
+{
+    <script>
+
+        //$(document).ready(function () {
+        //    if ($("#Calculo").val() != "") {
+        //        $("#Resultados").removeClass("hidden");
+        //    }
+        //})
+
+        //$("#Calcular").click(function () {
+
+        //    var x = $("[name='DadosPaciente.AST']").val();
+
+        //    if ($("[name='DadosPaciente.AST']").val() != "") {
+        //        $("#Resultados").removeClass("hidden");
+        //    }
+        //})
+
+        //$("#Limpar").click(function () {
+        //    $("#Resultados").addClass("hidden");
+        //})
+
+    </script>    
+}

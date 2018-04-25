@@ -1,44 +1,41 @@
 ﻿using CalculadoraNash.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using CalculadoraNash.Dominio.Servicos;
+using CalculadoraNash.ViewModels;
 
 namespace CalculadoraNash.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Calculadora(Paciente paciente)
+        private readonly CalculoDeIndiceService _calculoDeIndiceService = new CalculoDeIndiceService();
+
+        public ActionResult Calculadora(PacienteViewModel pacienteViewModel)
         {
-            return View(paciente);
+            var viewModel = new CalculadoraViewModel()
+            {
+                Paciente = pacienteViewModel
+            };
+            return View(viewModel);
         }
 
-        public ActionResult Calcular(Paciente paciente)
+        public ActionResult Calcular(CalculadoraViewModel calculadoraViewModel)
         {
-            paciente.Indices.Add(new Indice
-            {
-                Calculo = "FIB-4",
-                Score = Indice.CalculaFib4(paciente.DadosPaciente),
-                Observacao = "Nada."
-            });
+            //TODO: validar entrada de dados
+            
+            //TODO: passar de pacienteviewmodel para Paciente (usar o automapper)
+            var paciente = new Paciente() { Albumina = 1, ALT = 1, AST = 1, Diabetico = true, Idade = 80, IMC = 123, Nome = "Zé", Plaquetas = 12322};
 
-            paciente.Indices.Add(new Indice
-            {
-                Calculo = "BARD",
-                Score = Indice.CalculaBard(paciente.DadosPaciente),
-                Observacao = "Nada."
-            });
+            //Calculando índices
+            var resultados = _calculoDeIndiceService.CalcularTodosOsIndices(paciente);
 
-            paciente.Indices.Add(new Indice
+            //Montando viewModel para exibição na tela
+            foreach (var resultadoCalculo in resultados)
             {
-                Calculo = "NAFLD FIBROSIS",
-                Score = Indice.CalculaNafld(paciente.DadosPaciente),
-                Observacao = "Nada."
-            });
-
-            return View("Calculadora", paciente);
+                var resultadoViewModel = new ResultadoCalculoViewModel(resultadoCalculo.NomeIndice, resultadoCalculo.Score);
+                calculadoraViewModel.Resultados.Add(resultadoViewModel);
+            }
+            
+            return View("Calculadora", calculadoraViewModel);
         }
-
     }
 }

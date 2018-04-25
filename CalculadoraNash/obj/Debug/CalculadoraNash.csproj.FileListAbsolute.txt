@@ -195,3 +195,6 @@ C:\dev\Nash\CalculadoraNash\bin\pt-br\System.Web.WebPages.Razor.resources.dll
 C:\dev\Nash\CalculadoraNash\obj\Debug\CalculadoraNash.csprojResolveAssemblyReference.cache
 C:\dev\Nash\CalculadoraNash\obj\Debug\CalculadoraNash.dll
 C:\dev\Nash\CalculadoraNash\obj\Debug\CalculadoraNash.pdb
+C:\Jobs\CalculadoraNash\CalculadoraNash\bin\AntiXssLibrary.dll
+C:\Jobs\CalculadoraNash\CalculadoraNash\bin\CalculadoraNash.Dominio.dll
+C:\Jobs\CalculadoraNash\CalculadoraNash\bin\CalculadoraNash.Dominio.pdb

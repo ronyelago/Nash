@@ -11,10 +11,8 @@ namespace CalculadoraNash.Controllers
 
         public ActionResult Calculadora(PacienteViewModel pacienteViewModel)
         {
-            var viewModel = new CalculadoraViewModel()
-            {
-                Paciente = pacienteViewModel
-            };
+            var viewModel = new CalculadoraViewModel() { Paciente = pacienteViewModel };
+
             return View(viewModel);
         }
 
@@ -23,7 +21,17 @@ namespace CalculadoraNash.Controllers
             //TODO: validar entrada de dados
             
             //TODO: passar de pacienteviewmodel para Paciente (usar o automapper)
-            var paciente = new Paciente() { Albumina = 1, ALT = 1, AST = 1, Diabetico = true, Idade = 80, IMC = 123, Nome = "Zé", Plaquetas = 12322};
+            var paciente = new Paciente()
+            {
+                Albumina = 1,
+                ALT = 1,
+                AST = 1,
+                Diabetico = true,
+                Idade = 80,
+                IMC = 123,
+                Nome = "Zé",
+                Plaquetas = 12322
+            };
 
             //Calculando índices
             var resultados = _calculoDeIndiceService.CalcularTodosOsIndices(paciente);

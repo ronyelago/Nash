@@ -1,11 +1,11 @@
 ﻿using System;
 using CalculadoraNash.Dominio.ValueObject;
-using CalculadoraNash.Models;
 using System.Collections.Generic;
 using System.Linq;
-using CalculadoraNash.Dominio.Entidades.Indices;
+using CalculadoraNash.Dominio.Entities;
+using CalculadoraNash.Dominio.Entities.Indices;
 
-namespace CalculadoraNash.Dominio.Servicos
+namespace CalculadoraNash.Dominio.Services
 {
     public class CalculoDeIndiceService
     {
@@ -18,20 +18,23 @@ namespace CalculadoraNash.Dominio.Servicos
 
         public double CalculaIndice(string nomeIndice, Paciente paciente)
         {
-            var indice = TodosOsIndices.FirstOrDefault(a => a.Nome == nomeIndice);
-            if(indice == null)
-                throw new Exception($"Indice não encontrado ({nomeIndice})");
+            var indice = TodosOsIndices.FirstOrDefault(a => a.Titulo == nomeIndice);
 
-            return indice.Score(paciente);
+            if(indice == null)
+            {
+                throw new Exception($"Indice não encontrado ({nomeIndice})");
+            }
+            
+            return indice.GetScore(paciente);
         }
 
-        public IEnumerable<ResultadoCalculo> CalcularTodosOsIndices(Paciente paciente)
+        public IEnumerable<ScoreFibrose> CalcularTodosOsIndices(Paciente paciente)
         {
-            var listaResultados = new List<ResultadoCalculo>();
+            var listaResultados = new List<ScoreFibrose>();
 
             foreach (var indice in TodosOsIndices)
             {
-                listaResultados.Add(new ResultadoCalculo(indice.Nome, indice.Score(paciente)));
+                listaResultados.Add(new ScoreFibrose(indice.Titulo, indice.GetScore(paciente)));
             }
 
             return listaResultados;

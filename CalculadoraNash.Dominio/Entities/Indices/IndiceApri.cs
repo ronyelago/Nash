@@ -1,13 +1,12 @@
 ﻿using System;
-using CalculadoraNash.Models;
 
-namespace CalculadoraNash.Dominio.Entidades.Indices
+namespace CalculadoraNash.Dominio.Entities.Indices
 {
     public class IndiceApri : IIndice
     {
-        public string Nome => "Nafld";
+        public string Titulo => "Nafld";
 
-        public double Score(Paciente paciente)
+        public double GetScore(Paciente paciente)
         {
             return Math.Round((paciente.AST / 35) * 100 / (paciente.Plaquetas) * 100) / 100;
         }

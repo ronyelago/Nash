@@ -1,13 +1,13 @@
 ﻿using System;
-using CalculadoraNash.Models;
+using CalculadoraNash.Dominio.Entities;
 
-namespace CalculadoraNash.Dominio.Entidades.Indices
+namespace CalculadoraNash.Dominio.Entities.Indices
 {
     public class IndiceNafld : IIndice
     {
-        public string Nome => "Nafld";
+        public string Titulo => "Nafld";
 
-        public double Score(Paciente paciente)
+        public double GetScore(Paciente paciente)
         {
             int d = paciente.Diabetico ? 1 : 0;
 

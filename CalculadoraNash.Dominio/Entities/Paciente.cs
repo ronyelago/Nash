@@ -1,10 +1,11 @@
-﻿namespace CalculadoraNash.Models
+﻿namespace CalculadoraNash.Dominio.Entities
 {
     public class Paciente
     {
-        public int PacienteId { get; set; }
+        public int Id { get; set; }
 
         public string Nome { get; set; }
+
         public int Idade { get; set; }
 
         public double AST { get; set; }

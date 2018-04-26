@@ -1,13 +1,10 @@
-﻿using System;
-using CalculadoraNash.Models;
-
-namespace CalculadoraNash.Dominio.Entidades.Indices
+﻿namespace CalculadoraNash.Dominio.Entities.Indices
 {
     public class IndiceBard : IIndice
     {
-        public string Nome => "Bard";
+        public string Titulo => "Bard";
 
-        public double Score(Paciente paciente)
+        public double GetScore(Paciente paciente)
         {
             double bard = 0;
 

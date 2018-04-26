@@ -1,13 +1,12 @@
 ﻿using System;
-using CalculadoraNash.Models;
 
-namespace CalculadoraNash.Dominio.Entidades.Indices
+namespace CalculadoraNash.Dominio.Entities.Indices
 {
     public class IndiceFib4 : IIndice
     {
-        public string Nome => "Fib4";
+        public string Titulo => "Fib4";
 
-        public double Score(Paciente paciente)
+        public double GetScore(Paciente paciente)
         {
             return Math.Round((paciente.Idade * paciente.AST) / ((paciente.Plaquetas) * Math.Sqrt(paciente.ALT)), 2);
         }

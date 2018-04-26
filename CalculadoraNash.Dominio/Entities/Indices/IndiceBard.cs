@@ -2,23 +2,34 @@
 {
     public class IndiceBard : IIndice
     {
+        public IndiceBard(Paciente paciente)
+        {
+            this.Paciente = paciente;
+        }
+
+        public int Id { get; set; }
+
+        public Paciente Paciente { get; set; }
+
+        public int PacienteId { get; set; }
+
         public string Titulo => "Bard";
 
-        public double GetScore(Paciente paciente)
+        public double GetScore(PacienteDados pacienteDados)
         {
             double bard = 0;
 
-            if (paciente.IMC >= 28)
+            if (pacienteDados.IMC >= 28)
             {
                 bard += 1;
             }
 
-            if (paciente.AST / paciente.ALT >= 0.8)
+            if (pacienteDados.AST / pacienteDados.ALT >= 0.8)
             {
                 bard += 2;
             }
 
-            if (paciente.Diabetico)
+            if (pacienteDados.Diabetico)
             {
                 bard += 1;
             }

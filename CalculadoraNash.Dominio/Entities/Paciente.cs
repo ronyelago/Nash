@@ -1,4 +1,6 @@
-﻿namespace CalculadoraNash.Dominio.Entities
+﻿using System.Collections.Generic;
+
+namespace CalculadoraNash.Dominio.Entities
 {
     public class Paciente
     {
@@ -6,18 +8,6 @@
 
         public string Nome { get; set; }
 
-        public int Idade { get; set; }
-
-        public double AST { get; set; }
-
-        public double ALT { get; set; }
-
-        public double IMC { get; set; }
-        
-        public double Plaquetas { get; set; }
-
-        public double Albumina { get; set; }
-
-        public bool Diabetico { get; set; }
+        public List<PacienteDados> ListaPacienteDados { get; set; }
     }
 }

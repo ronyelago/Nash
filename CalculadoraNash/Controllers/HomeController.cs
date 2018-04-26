@@ -1,7 +1,6 @@
-﻿using CalculadoraNash.Models;
-using System.Web.Mvc;
-using CalculadoraNash.Dominio.Servicos;
+﻿using System.Web.Mvc;
 using CalculadoraNash.ViewModels;
+using CalculadoraNash.Dominio.Services;
 
 namespace CalculadoraNash.Controllers
 {
@@ -21,27 +20,27 @@ namespace CalculadoraNash.Controllers
             //TODO: validar entrada de dados
             
             //TODO: passar de pacienteviewmodel para Paciente (usar o automapper)
-            var paciente = new Paciente()
-            {
-                Albumina = 1,
-                ALT = 1,
-                AST = 1,
-                Diabetico = true,
-                Idade = 80,
-                IMC = 123,
-                Nome = "Zé",
-                Plaquetas = 12322
-            };
+            //var paciente = new Paciente()
+            //{
+            //    Albumina = 1,
+            //    ALT = 1,
+            //    AST = 1,
+            //    Diabetico = true,
+            //    Idade = 80,
+            //    IMC = 123,
+            //    Nome = "Zé",
+            //    Plaquetas = 12322
+            //};
 
             //Calculando índices
-            var resultados = _calculoDeIndiceService.CalcularTodosOsIndices(paciente);
+            //var resultados = _calculoDeIndiceService.CalcularIndiceFibrose(paciente);
 
             //Montando viewModel para exibição na tela
-            foreach (var resultadoCalculo in resultados)
-            {
-                var resultadoViewModel = new ResultadoCalculoViewModel(resultadoCalculo.NomeIndice, resultadoCalculo.Score);
-                calculadoraViewModel.Resultados.Add(resultadoViewModel);
-            }
+            //foreach (var resultadoCalculo in resultados)
+            //{
+            //    var resultadoViewModel = new ResultadoCalculoViewModel(resultadoCalculo.NomeIndice, resultadoCalculo.Score);
+            //    calculadoraViewModel.Resultados.Add(resultadoViewModel);
+            //}
             
             return View("Calculadora", calculadoraViewModel);
         }

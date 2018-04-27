@@ -327,3 +327,10 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+
+# Folders
+CalculadoraNash.Dominio/obj/
+CalculadoraNash/bin/
+CalculadoraNash.Dominio/obj/
+CalculadoraNash.Dominio/bin/
+.vs/

@@ -155,9 +155,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Mappers\AutoMapperConfig.cs" />
-    <Compile Include="Mappers\DomainToViewModelMappingProfile.cs" />
-    <Compile Include="Mappers\ViewModelToDomainMappingProfile.cs" />
+    <Compile Include="Mappings\AutoMapperConfig.cs" />
+    <Compile Include="Mappings\DomainToViewModelMappingProfile.cs" />
+    <Compile Include="Mappings\ViewModelToDomainMappingProfile.cs" />
     <Compile Include="ViewModels\PacienteDadosViewModel.cs" />
     <Compile Include="_Lixo\DadosPacienteViewModel.cs" />
     <Compile Include="_Lixo\IndiceViewModel.cs" />

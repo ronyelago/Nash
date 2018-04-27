@@ -1,11 +1,10 @@
 ﻿using System.Web.Mvc;
-using AutoMapper;
-using CalculadoraNash.Dominio.Servicos;
 using CalculadoraNash.ViewModels;
 using CalculadoraNash.Dominio.Services;
 using CalculadoraNash.Dominio.Entities.Indices;
 using CalculadoraNash.Dominio.Entities;
 using System;
+using AutoMapper;
 
 namespace CalculadoraNash.Controllers
 {
@@ -20,20 +19,22 @@ namespace CalculadoraNash.Controllers
 
         public ActionResult Calcular(PacienteViewModel pacienteViewModel)
         {
-            Paciente paciente = new Paciente
-            {
-                PacienteDados = new PacienteDados
-                {
-                    AST = pacienteViewModel.PacienteDados.AST,
-                    ALT = pacienteViewModel.PacienteDados.ALT,
-                    Idade = pacienteViewModel.PacienteDados.Idade,
-                    IMC = pacienteViewModel.PacienteDados.IMC,
-                    Albumina = pacienteViewModel.PacienteDados.Albumina,
-                    Diabetico = pacienteViewModel.PacienteDados.Diabetico,
-                    Plaquetas = pacienteViewModel.PacienteDados.Plaquetas,
-                    DataAfericao = DateTime.Now
-                }
-            };
+            //Paciente paciente = new Paciente
+            //{
+            //    PacienteDados = new PacienteDados
+            //    {
+            //        AST = pacienteViewModel.PacienteDados.AST,
+            //        ALT = pacienteViewModel.PacienteDados.ALT,
+            //        Idade = pacienteViewModel.PacienteDados.Idade,
+            //        IMC = pacienteViewModel.PacienteDados.IMC,
+            //        Albumina = pacienteViewModel.PacienteDados.Albumina,
+            //        Diabetico = pacienteViewModel.PacienteDados.Diabetico,
+            //        Plaquetas = pacienteViewModel.PacienteDados.Plaquetas,
+            //        DataAfericao = DateTime.Now
+            //    }
+            //};
+
+            var paciente = Mapper.Map<PacienteViewModel, Paciente>(pacienteViewModel);
 
             IndiceApri indiceApri = new IndiceApri(paciente);
             IndiceBard indiceBard = new IndiceBard(paciente);

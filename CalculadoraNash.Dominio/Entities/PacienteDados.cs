@@ -4,7 +4,7 @@ namespace CalculadoraNash.Dominio.Entities
 {
     public class PacienteDados
     {
-        public Paciente Paciente { get; set; }
+        public virtual Paciente Paciente { get; set; }
 
         public int PacienteId { get; set; }
 

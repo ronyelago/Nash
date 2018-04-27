@@ -12,3 +12,8 @@ C:\Jobs\CalculadoraNash\CalculadoraNash.Dominio\bin\Debug\AutoMapper.dll
 C:\Jobs\CalculadoraNash\CalculadoraNash.Dominio\bin\Debug\AutoMapper.xml
 C:\Jobs\CalculadoraNash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.csprojResolveAssemblyReference.cache
 C:\Jobs\CalculadoraNash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.csproj.CopyComplete
+C:\Jobs\CalculadoraNash\CalculadoraNash.Dominio\bin\Debug\CalculadoraNash.Dominio.dll.config
+C:\Jobs\CalculadoraNash\CalculadoraNash.Dominio\bin\Debug\EntityFramework.dll
+C:\Jobs\CalculadoraNash\CalculadoraNash.Dominio\bin\Debug\EntityFramework.SqlServer.dll
+C:\Jobs\CalculadoraNash\CalculadoraNash.Dominio\bin\Debug\EntityFramework.xml
+C:\Jobs\CalculadoraNash\CalculadoraNash.Dominio\bin\Debug\EntityFramework.SqlServer.xml

@@ -6,11 +6,11 @@ namespace CalculadoraNash.Mappers
     {
         public static void RegisterMappings()
         {
-            Mapper.Initialize(x =>
+            Mapper.Initialize(cgc =>
             {
-                x.AddProfile<DomainToViewModelMappingProfile>();
+                cgc.AddProfile<DomainToViewModelMappingProfile>();
+                cgc.AddProfile<ViewModelToDomainMappingProfile>();
             });
         }
-
     }
 }

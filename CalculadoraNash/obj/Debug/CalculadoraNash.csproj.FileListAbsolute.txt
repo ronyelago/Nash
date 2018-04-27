@@ -200,3 +200,8 @@ C:\Jobs\CalculadoraNash\CalculadoraNash\obj\Debug\CalculadoraNash.dll
 C:\Jobs\CalculadoraNash\CalculadoraNash\obj\Debug\CalculadoraNash.pdb
 C:\Jobs\CalculadoraNash\CalculadoraNash\bin\AutoMapper.dll
 C:\Jobs\CalculadoraNash\CalculadoraNash\bin\AutoMapper.xml
+C:\Jobs\CalculadoraNash\CalculadoraNash\bin\EntityFramework.dll
+C:\Jobs\CalculadoraNash\CalculadoraNash\bin\EntityFramework.SqlServer.dll
+C:\Jobs\CalculadoraNash\CalculadoraNash\bin\CalculadoraNash.Dominio.dll.config
+C:\Jobs\CalculadoraNash\CalculadoraNash\bin\EntityFramework.xml
+C:\Jobs\CalculadoraNash\CalculadoraNash\bin\EntityFramework.SqlServer.xml

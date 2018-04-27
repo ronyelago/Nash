@@ -1,5 +1,6 @@
 ﻿using CalculadoraNash.Models;
 using System.Web.Mvc;
+using AutoMapper;
 using CalculadoraNash.Dominio.Servicos;
 using CalculadoraNash.ViewModels;
 
@@ -22,8 +23,7 @@ namespace CalculadoraNash.Controllers
         {
             //TODO: validar entrada de dados
             
-            //TODO: passar de pacienteviewmodel para Paciente (usar o automapper)
-            var paciente = new Paciente() { Albumina = 1, ALT = 1, AST = 1, Diabetico = true, Idade = 80, IMC = 123, Nome = "Zé", Plaquetas = 12322};
+            var paciente = Mapper.Map<PacienteViewModel, Paciente>(calculadoraViewModel.Paciente);
 
             //Calculando índices
             var resultados = _calculoDeIndiceService.CalcularTodosOsIndices(paciente);

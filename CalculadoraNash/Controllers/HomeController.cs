@@ -1,6 +1,9 @@
 ﻿using System.Web.Mvc;
 using CalculadoraNash.ViewModels;
 using CalculadoraNash.Dominio.Services;
+using CalculadoraNash.Dominio.Entities.Indices;
+using CalculadoraNash.Dominio.Entities;
+using System;
 
 namespace CalculadoraNash.Controllers
 {
@@ -10,39 +13,37 @@ namespace CalculadoraNash.Controllers
 
         public ActionResult Calculadora(PacienteViewModel pacienteViewModel)
         {
-            var viewModel = new CalculadoraViewModel() { Paciente = pacienteViewModel };
-
-            return View(viewModel);
+            return View(pacienteViewModel);
         }
 
-        public ActionResult Calcular(CalculadoraViewModel calculadoraViewModel)
+        public ActionResult Calcular(PacienteViewModel pacienteViewModel)
         {
-            //TODO: validar entrada de dados
-            
-            //TODO: passar de pacienteviewmodel para Paciente (usar o automapper)
-            //var paciente = new Paciente()
-            //{
-            //    Albumina = 1,
-            //    ALT = 1,
-            //    AST = 1,
-            //    Diabetico = true,
-            //    Idade = 80,
-            //    IMC = 123,
-            //    Nome = "Zé",
-            //    Plaquetas = 12322
-            //};
+            Paciente paciente = new Paciente
+            {
+                PacienteDados = new PacienteDados
+                {
+                    AST = pacienteViewModel.PacienteDados.AST,
+                    ALT = pacienteViewModel.PacienteDados.ALT,
+                    Idade = pacienteViewModel.PacienteDados.Idade,
+                    IMC = pacienteViewModel.PacienteDados.IMC,
+                    Albumina = pacienteViewModel.PacienteDados.Albumina,
+                    Diabetico = pacienteViewModel.PacienteDados.Diabetico,
+                    Plaquetas = pacienteViewModel.PacienteDados.Plaquetas,
+                    DataAfericao = DateTime.Now
+                }
+            };
 
-            //Calculando índices
-            //var resultados = _calculoDeIndiceService.CalcularIndiceFibrose(paciente);
+            IndiceApri indiceApri = new IndiceApri(paciente);
+            IndiceBard indiceBard = new IndiceBard(paciente);
+            IndiceFib4 indiceFib4 = new IndiceFib4(paciente);
+            IndiceNafld indiceNafld = new IndiceNafld(paciente);
 
-            //Montando viewModel para exibição na tela
-            //foreach (var resultadoCalculo in resultados)
-            //{
-            //    var resultadoViewModel = new ResultadoCalculoViewModel(resultadoCalculo.NomeIndice, resultadoCalculo.Score);
-            //    calculadoraViewModel.Resultados.Add(resultadoViewModel);
-            //}
-            
-            return View("Calculadora", calculadoraViewModel);
+            pacienteViewModel.PacienteDados.ListaIndices.Add(indiceApri);
+            pacienteViewModel.PacienteDados.ListaIndices.Add(indiceBard);
+            pacienteViewModel.PacienteDados.ListaIndices.Add(indiceFib4);
+            pacienteViewModel.PacienteDados.ListaIndices.Add(indiceNafld);
+
+            return View("Calculadora", pacienteViewModel);
         }
     }
 }

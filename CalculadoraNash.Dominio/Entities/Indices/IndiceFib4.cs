@@ -15,6 +15,11 @@ namespace CalculadoraNash.Dominio.Entities.Indices
 
         public int PacienteId { get; set; }
 
+        public double Score
+        {
+            get { return GetScore(Paciente.PacienteDados); }
+        }
+
         public string Titulo => "Fib4";
 
         public double GetScore(PacienteDados pacienteDados)

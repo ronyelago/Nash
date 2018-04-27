@@ -8,3 +8,7 @@ C:\Jobs\CalculadoraNash\CalculadoraNash.Dominio\bin\Debug\CalculadoraNash.Domini
 C:\Jobs\CalculadoraNash\CalculadoraNash.Dominio\bin\Debug\CalculadoraNash.Dominio.pdb
 C:\Jobs\CalculadoraNash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.dll
 C:\Jobs\CalculadoraNash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.pdb
+C:\Jobs\CalculadoraNash\CalculadoraNash.Dominio\bin\Debug\AutoMapper.dll
+C:\Jobs\CalculadoraNash\CalculadoraNash.Dominio\bin\Debug\AutoMapper.xml
+C:\Jobs\CalculadoraNash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.csprojResolveAssemblyReference.cache
+C:\Jobs\CalculadoraNash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.csproj.CopyComplete

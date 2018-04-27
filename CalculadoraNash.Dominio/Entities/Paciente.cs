@@ -8,6 +8,8 @@ namespace CalculadoraNash.Dominio.Entities
 
         public string Nome { get; set; }
 
+        public PacienteDados PacienteDados { get; set; }
+
         public List<PacienteDados> ListaPacienteDados { get; set; }
     }
 }

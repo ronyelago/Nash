@@ -198,3 +198,5 @@ C:\Jobs\CalculadoraNash\CalculadoraNash\bin\pt-br\System.Web.WebPages.Razor.reso
 C:\Jobs\CalculadoraNash\CalculadoraNash\obj\Debug\CalculadoraNash.csproj.CopyComplete
 C:\Jobs\CalculadoraNash\CalculadoraNash\obj\Debug\CalculadoraNash.dll
 C:\Jobs\CalculadoraNash\CalculadoraNash\obj\Debug\CalculadoraNash.pdb
+C:\Jobs\CalculadoraNash\CalculadoraNash\bin\AutoMapper.dll
+C:\Jobs\CalculadoraNash\CalculadoraNash\bin\AutoMapper.xml

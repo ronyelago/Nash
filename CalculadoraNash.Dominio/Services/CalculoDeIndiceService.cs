@@ -19,7 +19,7 @@ namespace CalculadoraNash.Dominio.Services
         //    {
         //        throw new Exception($"Indice não encontrado ({IndiceId})");
         //    }
-            
+
         //    return indice.GetScore(paciente);
         //}
 
@@ -29,7 +29,7 @@ namespace CalculadoraNash.Dominio.Services
         //    {
 
         //    }
-            
+
 
         //    return paciente.IndiceFibrose;
         //}

@@ -13,6 +13,11 @@
 
         public int PacienteId { get; set; }
 
+        public double Score
+        {
+            get { return GetScore(Paciente.PacienteDados); }
+        }
+
         public string Titulo => "Bard";
 
         public double GetScore(PacienteDados pacienteDados)

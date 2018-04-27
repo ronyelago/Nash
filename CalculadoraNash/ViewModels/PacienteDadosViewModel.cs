@@ -1,9 +1,16 @@
-﻿using System;
+﻿using CalculadoraNash.Dominio.Entities.Indices;
+using System;
+using System.Collections.Generic;
 
 namespace CalculadoraNash.ViewModels
 {
     public class PacienteDadosViewModel
     {
+        public PacienteDadosViewModel()
+        {
+            ListaIndices = new List<IIndice>();
+        }
+
         public PacienteViewModel Paciente { get; set; }
 
         public int PacienteId { get; set; }
@@ -25,5 +32,7 @@ namespace CalculadoraNash.ViewModels
         public bool Diabetico { get; set; }
 
         public DateTime DataAfericao { get; set; }
+
+        public List<IIndice> ListaIndices { get; set; }
     }
 }

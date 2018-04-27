@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
@@ -39,9 +42,13 @@
     <Compile Include="Entities\Indices\IndiceNafld.cs" />
     <Compile Include="Entities\Indices\IndiceBard.cs" />
     <Compile Include="Entities\Indices\IIndice.cs" />
+    <Compile Include="Entities\PacienteDados.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CalculoDeIndiceService.cs" />
-    <Compile Include="ValueObject\ResultadoCalculo.cs" />
+    <Compile Include="ValueObject\IndiceFibrose.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

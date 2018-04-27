@@ -1,8 +1,11 @@
-﻿using CalculadoraNash.Models;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using AutoMapper;
 using CalculadoraNash.Dominio.Servicos;
 using CalculadoraNash.ViewModels;
+using CalculadoraNash.Dominio.Services;
+using CalculadoraNash.Dominio.Entities.Indices;
+using CalculadoraNash.Dominio.Entities;
+using System;
 
 namespace CalculadoraNash.Controllers
 {
@@ -12,30 +15,37 @@ namespace CalculadoraNash.Controllers
 
         public ActionResult Calculadora(PacienteViewModel pacienteViewModel)
         {
-            var viewModel = new CalculadoraViewModel()
-            {
-                Paciente = pacienteViewModel
-            };
-            return View(viewModel);
+            return View(pacienteViewModel);
         }
 
-        public ActionResult Calcular(CalculadoraViewModel calculadoraViewModel)
+        public ActionResult Calcular(PacienteViewModel pacienteViewModel)
         {
-            //TODO: validar entrada de dados
-            
-            var paciente = Mapper.Map<PacienteViewModel, Paciente>(calculadoraViewModel.Paciente);
-
-            //Calculando índices
-            var resultados = _calculoDeIndiceService.CalcularTodosOsIndices(paciente);
-
-            //Montando viewModel para exibição na tela
-            foreach (var resultadoCalculo in resultados)
+            Paciente paciente = new Paciente
             {
-                var resultadoViewModel = new ResultadoCalculoViewModel(resultadoCalculo.NomeIndice, resultadoCalculo.Score);
-                calculadoraViewModel.Resultados.Add(resultadoViewModel);
-            }
-            
-            return View("Calculadora", calculadoraViewModel);
+                PacienteDados = new PacienteDados
+                {
+                    AST = pacienteViewModel.PacienteDados.AST,
+                    ALT = pacienteViewModel.PacienteDados.ALT,
+                    Idade = pacienteViewModel.PacienteDados.Idade,
+                    IMC = pacienteViewModel.PacienteDados.IMC,
+                    Albumina = pacienteViewModel.PacienteDados.Albumina,
+                    Diabetico = pacienteViewModel.PacienteDados.Diabetico,
+                    Plaquetas = pacienteViewModel.PacienteDados.Plaquetas,
+                    DataAfericao = DateTime.Now
+                }
+            };
+
+            IndiceApri indiceApri = new IndiceApri(paciente);
+            IndiceBard indiceBard = new IndiceBard(paciente);
+            IndiceFib4 indiceFib4 = new IndiceFib4(paciente);
+            IndiceNafld indiceNafld = new IndiceNafld(paciente);
+
+            pacienteViewModel.PacienteDados.ListaIndices.Add(indiceApri);
+            pacienteViewModel.PacienteDados.ListaIndices.Add(indiceBard);
+            pacienteViewModel.PacienteDados.ListaIndices.Add(indiceFib4);
+            pacienteViewModel.PacienteDados.ListaIndices.Add(indiceNafld);
+
+            return View("Calculadora", pacienteViewModel);
         }
     }
 }

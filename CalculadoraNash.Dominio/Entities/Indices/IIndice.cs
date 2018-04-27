@@ -1,8 +1,12 @@
-﻿namespace CalculadoraNash.Models
+﻿namespace CalculadoraNash.Dominio.Entities.Indices
 {
     public interface IIndice
     {
-        string Nome { get; }
-        double Score(Paciente dadosPaciente);
+        int Id { get; set; }
+        Paciente Paciente { get; set; }
+        int PacienteId { get; set; }
+        string Titulo { get; }
+        double Score { get; }
+        double GetScore(PacienteDados pacienteDados);
     }
 }

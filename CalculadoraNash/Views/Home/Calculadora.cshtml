@@ -1,4 +1,4 @@
-﻿@model CalculadoraNash.ViewModels.CalculadoraViewModel
+﻿@model CalculadoraNash.ViewModels.PacienteViewModel
 
 @using (Html.BeginForm(actionName: "Calcular", controllerName: "Home")) 
 {
@@ -9,60 +9,60 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.Paciente.AST, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.PacienteDados.AST, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Paciente.AST, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Paciente.AST, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.PacienteDados.AST, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PacienteDados.AST, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Paciente.ALT, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.PacienteDados.ALT, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Paciente.ALT, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Paciente.ALT, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.PacienteDados.ALT, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PacienteDados.ALT, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Paciente.IMC, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.PacienteDados.IMC, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Paciente.IMC, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Paciente.IMC, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.PacienteDados.IMC, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PacienteDados.IMC, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Paciente.Diabetico, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.PacienteDados.Diabetico, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
-                    @Html.EditorFor(model => model.Paciente.Diabetico)
-                    @Html.ValidationMessageFor(model => model.Paciente.Diabetico, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.PacienteDados.Diabetico)
+                    @Html.ValidationMessageFor(model => model.PacienteDados.Diabetico, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Paciente.Idade, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.PacienteDados.Idade, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Paciente.Idade, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Paciente.Idade, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.PacienteDados.Idade, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PacienteDados.Idade, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Paciente.Plaquetas, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.PacienteDados.Plaquetas, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Paciente.Plaquetas, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Paciente.Plaquetas, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.PacienteDados.Plaquetas, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PacienteDados.Plaquetas, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Paciente.Albumina, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.PacienteDados.Albumina, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Paciente.Albumina, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Paciente.Albumina, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.PacienteDados.Albumina, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PacienteDados.Albumina, "", new { @class = "text-danger" })
             </div>
         </div>
         
@@ -86,14 +86,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @if (Model.Resultados != null)
+                            @if (Model.PacienteDados.ListaIndices != null)
                             {
-                                 foreach (var risco in Model.Resultados)
+                                 foreach (var indice in Model.PacienteDados.ListaIndices)
                                  {
                                     <tr>
-                                        <td id="Calculo">@risco.NomeIndice</td>
-                                        <td id="Score">@risco.Score</td>
-                                        <td id="Observacao">@*@risco.Observacao*@</td>
+                                        <td id="Calculo">@indice.Titulo</td>
+                                        <td id="Score">@indice.Score</td>
                                     </tr>
 
                                  }

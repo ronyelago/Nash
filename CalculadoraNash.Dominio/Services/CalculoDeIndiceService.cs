@@ -1,40 +1,37 @@
 ﻿using System;
 using CalculadoraNash.Dominio.ValueObject;
-using CalculadoraNash.Models;
-using System.Collections.Generic;
 using System.Linq;
-using CalculadoraNash.Dominio.Entidades.Indices;
+using CalculadoraNash.Dominio.Entities;
 
-namespace CalculadoraNash.Dominio.Servicos
+namespace CalculadoraNash.Dominio.Services
 {
     public class CalculoDeIndiceService
     {
-        private readonly IIndice[] TodosOsIndices = {
-            new IndiceApri(),
-            new IndiceBard(),
-            new IndiceFib4(),
-            new IndiceNafld()
-        };
 
-        public double CalculaIndice(string nomeIndice, Paciente paciente)
-        {
-            var indice = TodosOsIndices.FirstOrDefault(a => a.Nome == nomeIndice);
-            if(indice == null)
-                throw new Exception($"Indice não encontrado ({nomeIndice})");
+        // Pesquisa e Retorna um índice especifico de um paciente.
+        // O índice é pesquisado de acordo com o título.
+        // Um paciente possui uma lista de índices.
+        //public double CalculaIndice(int IndiceId, Paciente paciente)
+        //{
+        //    var indice = paciente.Indices.FirstOrDefault(i => i.Id == IndiceId);
 
-            return indice.Score(paciente);
-        }
+        //    if(indice == null)
+        //    {
+        //        throw new Exception($"Indice não encontrado ({IndiceId})");
+        //    }
 
-        public IEnumerable<ResultadoCalculo> CalcularTodosOsIndices(Paciente paciente)
-        {
-            var listaResultados = new List<ResultadoCalculo>();
+        //    return indice.GetScore(paciente);
+        //}
 
-            foreach (var indice in TodosOsIndices)
-            {
-                listaResultados.Add(new ResultadoCalculo(indice.Nome, indice.Score(paciente)));
-            }
+        //public IndiceFibrose CalcularIndiceFibrose(Paciente paciente)
+        //{
+        //    if (paciente.Indices.)
+        //    {
 
-            return listaResultados;
-        }
+        //    }
+
+
+        //    return paciente.IndiceFibrose;
+        //}
     }
 }

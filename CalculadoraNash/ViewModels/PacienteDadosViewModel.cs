@@ -1,6 +1,7 @@
 ﻿using CalculadoraNash.Dominio.Entities.Indices;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace CalculadoraNash.ViewModels
 {
@@ -17,6 +18,7 @@ namespace CalculadoraNash.ViewModels
 
         public int Id { get; set; }
 
+        [Required(ErrorMessage = "O campo idade é obrigatório.")]
         public int Idade { get; set; }
 
         public double AST { get; set; }

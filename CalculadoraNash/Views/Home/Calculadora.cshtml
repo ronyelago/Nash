@@ -1,9 +1,9 @@
 ﻿@model CalculadoraNash.ViewModels.PacienteViewModel
 
-@using (Html.BeginForm(actionName: "Calcular", controllerName: "Home")) 
+@using (Html.BeginForm(actionName: "Calcular", controllerName: "Home"))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Dados do Paciente</h4>
         <hr />
@@ -65,70 +65,102 @@
                 @Html.ValidationMessageFor(model => model.PacienteDados.Albumina, "", new { @class = "text-danger" })
             </div>
         </div>
-        
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Calcular" id="Calcular" class="btn btn-success"/>
+                <input type="submit" value="Calcular" id="Calcular" class="btn btn-success" @*data-target="#ResultadosModal" data-toggle="modal"*@ />
                 <button type="button" id="Limpar" onclick="Limpar()" class="btn btn-danger">Limpar</button>
             </div>
         </div>
-
-        @*Resultado dos cálculos*@
-        <div id="Resultados">
-            <div class="row">
-                <div class="col-8" id="resultados">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Cálculo</th>
-                                <th scope="col">Score</th>
-                                <th scope="col">Observação</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @if (Model.PacienteDados.ListaIndices != null)
-                            {
-                                 foreach (var indice in Model.PacienteDados.ListaIndices)
-                                 {
-                                    <tr>
-                                        <td id="Calculo">@indice.Titulo</td>
-                                        <td id="Score">@indice.Score</td>
-                                    </tr>
-
-                                 }
-                            }
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
     </div>
 }
+
+@*modal*@
+<div class="modal fade" id="ResultadosModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal">x</button>
+                <h4 class="modal-title">Resultados</h4>
+            </div>
+            <div class="modal-body">
+                @*corpo do modal*@
+                <div>
+                    <div class="row">
+                        <div class="col-8" id="resultados">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Cálculo</th>
+                                        <th scope="col">Score</th>
+                                        <th scope="col">Observação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model.PacienteDados.ListaIndices != null)
+                                    {
+                                        foreach (var indice in Model.PacienteDados.ListaIndices)
+                                        {
+                                            <tr>
+                                                <td id="Calculo">@indice.Titulo</td>
+                                                <td id="Score">@indice.Score</td>
+                                            </tr>
+
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                <button class="btn btn-success">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>  
 
 
 @section Scripts
 {
     <script>
 
-        //$(document).ready(function () {
-        //    if ($("#Nome").val() != "") {
-        //        $("#Resultados").removeClass("hidden");
-        //    }
-        //})
+        $(document).ready(function () {
+            if (true) {
+                $("#PacienteDados_AST").val("");
+                $("#PacienteDados_ALT").val("");
+                $("#PacienteDados_IMC").val("");
+                $("#PacienteDados_Idade").val("");
+                $("#PacienteDados_Plaquetas").val("");
+                $("#PacienteDados_Albumina").val("");
+                $("#PacienteDados_Diabetico").val("false");
+            }
 
-        //$("#Calcular").click(function () {
+            $("#Calcular").click(function () {
 
-        //    var x = $("[name='DadosPaciente.AST']").val();
+                var PacienteViewModel = {
+                    Id : 1,
+                    Nome: "Nadjaelson",
+                    PacienteDadosViewModel : {
+                        AST: $("#PacienteDados_AST").val(),
+                        ALT: $("#PacienteDados_ALT").val(),
+                        IMC: $("#PacienteDados_IMC").val(),
+                        Idade: $("#PacienteDados_Idade").val(),
+                        Plaquetas: $("#PacienteDados_Plaquetas").val(),
+                        Albumina: $("#PacienteDados_Albumina").val(),
+                        Diabetico: $("#PacienteDados_Diabetico").val()
+                    }
+                }
 
-        //    if ($("[name='DadosPaciente.AST']").val() != "") {
-        //        $("#Resultados").removeClass("hidden");
-        //    }
-        //})
+                $.post("Home/Calcular",
+                    {
+                        PacienteViewModel
+                    });
+            });
+        })
 
-        //$("#Limpar").click(function () {
-        //    $("#Resultados").addClass("hidden");
-        //})
 
-    </script>    
+    </script>
 }

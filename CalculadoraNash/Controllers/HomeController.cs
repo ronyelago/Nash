@@ -41,6 +41,7 @@ namespace CalculadoraNash.Controllers
             var Paciente = context.Pacientes.FirstOrDefault(p => p.Id == 1);
             pacienteViewModel = Mapper.Map<Paciente, PacienteViewModel>(Paciente);
 
+
             return View("Paciente", pacienteViewModel);
         }
     }

@@ -12,5 +12,7 @@
         public string Nome { get; set; }
 
         public PacienteDadosViewModel PacienteDados { get; set; }
+
+        public bool Calculado { get; set; }
     }
 }

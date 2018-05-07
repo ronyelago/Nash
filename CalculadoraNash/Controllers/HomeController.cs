@@ -18,10 +18,20 @@ namespace CalculadoraNash.Controllers
             return View(pacienteViewModel);
         }
 
+        [HttpGet]
+        public ActionResult Calcular()
+        {
+            return View("Calculadora", new PacienteViewModel());
+        }
+
+        [HttpPost]
         public ActionResult Calcular(PacienteViewModel pacienteViewModel)
         {
-            var pacienteView = Mapper.Map<PacienteViewModel, Paciente>(pacienteViewModel);
+            if(!ModelState.IsValid)
+                return View("Calculadora", pacienteViewModel);
 
+            var pacienteView = Mapper.Map<PacienteViewModel, Paciente>(pacienteViewModel);
+            
             IndiceApri indiceApri = new IndiceApri(pacienteView);
             IndiceBard indiceBard = new IndiceBard(pacienteView);
             IndiceFib4 indiceFib4 = new IndiceFib4(pacienteView);
@@ -31,6 +41,8 @@ namespace CalculadoraNash.Controllers
             pacienteViewModel.PacienteDados.ListaIndices.Add(indiceBard);
             pacienteViewModel.PacienteDados.ListaIndices.Add(indiceFib4);
             pacienteViewModel.PacienteDados.ListaIndices.Add(indiceNafld);
+
+            pacienteViewModel.Calculado = true;
 
             return View("Calculadora", pacienteViewModel);
         }

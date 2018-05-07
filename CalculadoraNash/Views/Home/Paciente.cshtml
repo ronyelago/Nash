@@ -7,3 +7,36 @@
 @Html.LabelFor(Model => Model.PacienteDados.Idade)
 @Html.EditorFor(Model => Model.PacienteDados.Idade)
 
+<input type="button" id="Calcular" value="ok" />
+
+@section Scripts
+{
+    
+    <script>
+                $("#Calcular").click(function () {
+
+                    var pacienteViewModel = {
+                        Id : 1,
+                        Nome: "Jovelina",
+                        PacienteDados : {
+                            AST: 123,
+                            ALT: 123,
+                            IMC: 123,
+                            Idade: 123,
+                            Plaquetas: 123,
+                            Albumina: 123,
+                            Diabetico: false
+                        }
+                    }
+
+                    $.ajax({
+                        type: "POST",
+                        url: "/Home/Calcular",
+                        data: pacienteViewModel,
+                        success: function () { alert("Fumegou") },
+                        error: function () { alert("Deu ruim") }
+                    })
+                });
+    </script>
+
+}

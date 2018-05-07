@@ -59,5 +59,10 @@ namespace CalculadoraNash.Controllers
 
             return View("Paciente", pacienteViewModel);
         }
+
+        public ActionResult Paciente()
+        {
+            return View();
+        }
     }
 }

@@ -34,4 +34,4 @@ C:\Jobs\Nash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.csproj.Co
 C:\Jobs\Nash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.csproj.CopyComplete
 C:\Jobs\Nash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.dll
 C:\Jobs\Nash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.pdb
-C:\Jobs\Nash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.csprojResolveAssemblyReference.cache
+C:\Jobs\Nash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.csprojAssemblyReference.cache

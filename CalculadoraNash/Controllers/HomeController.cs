@@ -38,8 +38,11 @@ namespace CalculadoraNash.Controllers
         public ActionResult CalcularDoBanco(PacienteViewModel pacienteViewModel)
         {
             CalculadoraContext context = new CalculadoraContext();
-            var Paciente = context.Pacientes.FirstOrDefault(p => p.Id == 1);
-            pacienteViewModel = Mapper.Map<Paciente, PacienteViewModel>(Paciente);
+
+            var paciente = from p in context.Pacientes
+                    where p.Id == 1
+                    select p;
+
 
 
             return View("Paciente", pacienteViewModel);

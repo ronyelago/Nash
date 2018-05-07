@@ -153,8 +153,6 @@
     <Compile Include="Mappers\DomainToViewModelMappingProfile.cs" />
     <Compile Include="Mappers\ViewModelToDomainMappingProfile.cs" />
     <Compile Include="ViewModels\PacienteDadosViewModel.cs" />
-    <Compile Include="_Lixo\DadosPacienteViewModel.cs" />
-    <Compile Include="_Lixo\IndiceViewModel.cs" />
     <Compile Include="ViewModels\PacienteViewModel.cs" />
     <Compile Include="ViewModels\CalculadoraViewModel.cs" />
     <Compile Include="ViewModels\ResultadoCalculoViewModel.cs" />
@@ -201,6 +199,7 @@
     <Content Include="Views\Home\Calculadora.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Paciente.cshtml" />
+    <Content Include="Views\Home\CalculadoraFibrose.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

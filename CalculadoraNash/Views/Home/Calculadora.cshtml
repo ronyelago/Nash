@@ -28,6 +28,7 @@
             @Html.LabelFor(model => model.PacienteDados.IMC, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.PacienteDados.IMC, new { htmlAttributes = new { @class = "form-control" } })
+                <button id="ImcButton" class="btn btn-info" type="button">Calcular IMC</button>
                 @Html.ValidationMessageFor(model => model.PacienteDados.IMC, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -84,7 +85,6 @@
                 <h4 class="modal-title">Resultados</h4>
             </div>
             <div class="modal-body">
-                @*corpo do modal*@
                 <div>
                     <div class="row">
                         <div class="col-8" id="resultados">
@@ -121,6 +121,33 @@
         </div>
     </div>
 </div>
+@*fim do modal de resultado*@
+
+@*modal de IMC*@
+<div class="modal fade" id="ImcModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal">x</button>
+                <h4 class="modal-title">Cálcule seu IMC</h4>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <label>Altura</label>
+                    <input id="altura" type="text" />
+                </div>
+                <div>
+                    <label>Peso</label>
+                    <input id="peso" type="text" />
+                </div>
+                <div>
+                    <h2 id="Imc"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*fim do modal de imc*@
 
 <input type="hidden" id="calculado" value="@(Model.Calculado ? "1" : "0")"/>
 
@@ -139,32 +166,27 @@
                 $("#PacienteDados_Diabetico").val("false");
             }
 
-            //$("#Calcular").click(function () {
-
-            //    var PacienteViewModel = {
-            //        Id : 1,
-            //        Nome: "Nadjaelson",
-            //        PacienteDadosViewModel : {
-            //            AST: $("#PacienteDados_AST").val(),
-            //            ALT: $("#PacienteDados_ALT").val(),
-            //            IMC: $("#PacienteDados_IMC").val(),
-            //            Idade: $("#PacienteDados_Idade").val(),
-            //            Plaquetas: $("#PacienteDados_Plaquetas").val(),
-            //            Albumina: $("#PacienteDados_Albumina").val(),
-            //            Diabetico: $("#PacienteDados_Diabetico").val()
-            //        }
-            //    }
-
-            //    $.post("Home/Calcular",
-            //        {
-            //            PacienteViewModel
-            //        });
-            //});
-
             if ($('#calculado').val() == '1') {
                 $('#ResultadosModal').modal('show');
             }
+
+            $("#ImcButton").click(function () {
+                $("#ImcModal").modal("show");
+            })
+
+            $("#peso").keyup(function () {
+                $("#Imc").text($("#peso").val())
+            })
+            $("#altura").keydown(function () {
+                $("#Imc").text()
+            })
+
         })
+
+        function CalculaImc(peso = 1, altura = 1) {
+
+            return peso / (altura * altura);
+        }
 
 
     </script>

@@ -28,10 +28,10 @@ C:\Jobs\Nash\CalculadoraNash.Dominio\bin\Debug\EntityFramework.SqlServer.dll
 C:\Jobs\Nash\CalculadoraNash.Dominio\bin\Debug\AutoMapper.xml
 C:\Jobs\Nash\CalculadoraNash.Dominio\bin\Debug\EntityFramework.xml
 C:\Jobs\Nash\CalculadoraNash.Dominio\bin\Debug\EntityFramework.SqlServer.xml
-C:\Jobs\Nash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.Migrations.initialCreate.resources
-C:\Jobs\Nash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.csproj.GenerateResource.cache
 C:\Jobs\Nash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.csproj.CoreCompileInputs.cache
 C:\Jobs\Nash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.csproj.CopyComplete
 C:\Jobs\Nash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.dll
 C:\Jobs\Nash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.pdb
 C:\Jobs\Nash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.csprojAssemblyReference.cache
+C:\Jobs\Nash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.Migrations.creating.resources
+C:\Jobs\Nash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.csproj.GenerateResource.cache

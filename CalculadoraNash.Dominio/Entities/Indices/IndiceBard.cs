@@ -1,22 +1,14 @@
-﻿namespace CalculadoraNash.Dominio.Entities.Indices
+﻿using System.Linq;
+
+namespace CalculadoraNash.Dominio.Entities.Indices
 {
     public class IndiceBard : IIndice
     {
-        public IndiceBard(Paciente paciente)
+        public IndiceBard(PacienteDados pacienteDados)
         {
-            this.Paciente = paciente;
+            Score = GetScore(pacienteDados);
         }
-
-        public int Id { get; set; }
-
-        public Paciente Paciente { get; set; }
-
-        public int PacienteId { get; set; }
-
-        public double Score
-        {
-            get { return GetScore(Paciente.PacienteDados); }
-        }
+        public double Score { get; set; }
 
         public string Titulo => "Bard";
 

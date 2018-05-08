@@ -4,12 +4,14 @@ namespace CalculadoraNash.Dominio.Entities
 {
     public class Paciente
     {
+        public Paciente()
+        {
+            ListaPacienteDados = new List<PacienteDados>();
+        }
         public int Id { get; set; }
 
         public string Nome { get; set; }
 
-        public virtual PacienteDados PacienteDados { get; set; }
-
-        public virtual List<PacienteDados> ListaPacienteDados { get; set; }
+        public virtual ICollection<PacienteDados> ListaPacienteDados { get; set; }
     }
 }

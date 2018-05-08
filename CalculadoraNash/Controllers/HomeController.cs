@@ -2,8 +2,8 @@
 using CalculadoraNash.Dominio.Entities;
 using CalculadoraNash.Dominio.Entities.Indices;
 using CalculadoraNash.Dominio.Mappings;
-using CalculadoraNash.Dominio.Services;
 using CalculadoraNash.ViewModels;
+using System;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -11,7 +11,7 @@ namespace CalculadoraNash.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly CalculoDeIndiceService _calculoDeIndiceService = new CalculoDeIndiceService();
+        private readonly CalculadoraContext context = new CalculadoraContext();
 
         public ActionResult Calculadora(PacienteViewModel pacienteViewModel)
         {
@@ -27,15 +27,18 @@ namespace CalculadoraNash.Controllers
         [HttpPost]
         public ActionResult Calcular(PacienteViewModel pacienteViewModel)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
+            {
                 return View("Calculadora", pacienteViewModel);
+            }
 
-            var pacienteView = Mapper.Map<PacienteViewModel, Paciente>(pacienteViewModel);
+            Paciente pacienteView = Mapper.Map<PacienteViewModel, Paciente>(pacienteViewModel);
+            pacienteView.ListaPacienteDados.Add(Mapper.Map<PacienteDadosViewModel, PacienteDados>(pacienteViewModel.PacienteDados));
             
-            IndiceApri indiceApri = new IndiceApri(pacienteView);
-            IndiceBard indiceBard = new IndiceBard(pacienteView);
-            IndiceFib4 indiceFib4 = new IndiceFib4(pacienteView);
-            IndiceNafld indiceNafld = new IndiceNafld(pacienteView);
+            IndiceApri indiceApri = new IndiceApri(pacienteView.ListaPacienteDados.FirstOrDefault());
+            IndiceBard indiceBard = new IndiceBard(pacienteView.ListaPacienteDados.FirstOrDefault());
+            IndiceFib4 indiceFib4 = new IndiceFib4(pacienteView.ListaPacienteDados.FirstOrDefault());
+            IndiceNafld indiceNafld = new IndiceNafld(pacienteView.ListaPacienteDados.FirstOrDefault());
 
             pacienteViewModel.PacienteDados.ListaIndices.Add(indiceApri);
             pacienteViewModel.PacienteDados.ListaIndices.Add(indiceBard);
@@ -47,21 +50,18 @@ namespace CalculadoraNash.Controllers
             return View("Calculadora", pacienteViewModel);
         }
 
-        public ActionResult CalcularDoBanco(PacienteViewModel pacienteViewModel)
+        [HttpPost]
+        public ActionResult Create(PacienteViewModel paciente)
         {
-            CalculadoraContext context = new CalculadoraContext();
+            var p = Mapper.Map<PacienteViewModel, Paciente>(paciente);
+            var pd = Mapper.Map<PacienteDadosViewModel, PacienteDados>(paciente.PacienteDados);
+            pd.DataAfericao = DateTime.Now;
 
-            var paciente = from p in context.Pacientes
-                    where p.Id == 1
-                    select p;
+            p.ListaPacienteDados.Add(pd);
 
+            context.Pacientes.Add(p);
+            context.SaveChanges();
 
-
-            return View("Paciente", pacienteViewModel);
-        }
-
-        public ActionResult Paciente()
-        {
             return View();
         }
     }

@@ -118,7 +118,7 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                <button class="btn btn-success">Salvar</button>
+                <button id="Salvar" class="btn btn-success">Salvar</button>
             </div>
         </div>
     </div>
@@ -213,6 +213,26 @@
                 $("#peso").val("");
                 $("#altura").val("");
                 $("#Imc").text("--.-");
+            })
+
+            $("#Salvar").click(function () {
+
+                var paciente = {
+                    Nome: "Jovelina",
+                    PacienteDados: {
+                        AST: 123,
+                        ALT: 123,
+                        IMC: 123,
+                        Idade: 123,
+                        Plaquetas: 123,
+                        Albumina: 123,
+                        Diabetico: false
+                    }
+                }
+
+                $.post("/Home/Create", {
+                    paciente
+                });
             })
 
         })

@@ -1,24 +1,15 @@
 ﻿using System;
+using System.Linq;
 
 namespace CalculadoraNash.Dominio.Entities.Indices
 {
     public class IndiceFib4 : IIndice
     {
-        public IndiceFib4(Paciente paciente)
+        public IndiceFib4(PacienteDados pacienteDados)
         {
-            this.Paciente = paciente;
+            Score = GetScore(pacienteDados);
         }
-
-        public int Id { get; set; }
-
-        public Paciente Paciente { get; set; }
-
-        public int PacienteId { get; set; }
-
-        public double Score
-        {
-            get { return GetScore(Paciente.PacienteDados); }
-        }
+        public double Score { get; set; }
 
         public string Titulo => "Fib4";
 

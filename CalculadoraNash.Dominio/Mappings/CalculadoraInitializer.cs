@@ -22,7 +22,6 @@ namespace CalculadoraNash.Dominio.Mappings
             {
                 new PacienteDados
                 {
-                    PacienteId = 1,
                     Idade = 32,
                     AST = 300,
                     ALT = 300,
@@ -35,7 +34,6 @@ namespace CalculadoraNash.Dominio.Mappings
 
                 new PacienteDados
                 {
-                    PacienteId = 2,
                     Idade = 42,
                     AST = 300,
                     ALT = 300,
@@ -48,7 +46,6 @@ namespace CalculadoraNash.Dominio.Mappings
 
                 new PacienteDados
                 {
-                    PacienteId = 3,
                     Idade = 51,
                     AST = 400,
                     ALT = 300,

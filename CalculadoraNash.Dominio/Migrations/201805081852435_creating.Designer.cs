@@ -7,13 +7,13 @@ namespace CalculadoraNash.Dominio.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class initialCreate : IMigrationMetadata
+    public sealed partial class creating : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(creating));
         
         string IMigrationMetadata.Id
         {
-            get { return "201805031324462_initialCreate"; }
+            get { return "201805081852435_creating"; }
         }
         
         string IMigrationMetadata.Source

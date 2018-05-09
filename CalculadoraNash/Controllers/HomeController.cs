@@ -51,15 +51,15 @@ namespace CalculadoraNash.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(PacienteViewModel paciente)
+        public ActionResult Create(PacienteViewModel pacienteView)
         {
-            var p = Mapper.Map<PacienteViewModel, Paciente>(paciente);
-            var pd = Mapper.Map<PacienteDadosViewModel, PacienteDados>(paciente.PacienteDados);
-            pd.DataAfericao = DateTime.Now;
+            var paciente = Mapper.Map<PacienteViewModel, Paciente>(pacienteView);
+            var pacienteDados = Mapper.Map<PacienteDadosViewModel, PacienteDados>(pacienteView.PacienteDados);
+            pacienteDados.DataAfericao = DateTime.Now;
 
-            p.ListaPacienteDados.Add(pd);
+            paciente.ListaPacienteDados.Add(pacienteDados);
 
-            context.Pacientes.Add(p);
+            context.Pacientes.Add(paciente);
             context.SaveChanges();
 
             return View();

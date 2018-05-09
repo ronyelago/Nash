@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CalculadoraNash.Dominio.Entities
+namespace CalculadoraNash.Domain.Entities
 {
     public class Paciente
     {

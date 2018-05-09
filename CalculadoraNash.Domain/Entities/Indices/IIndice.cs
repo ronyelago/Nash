@@ -1,4 +1,4 @@
-﻿namespace CalculadoraNash.Dominio.Entities.Indices
+﻿namespace CalculadoraNash.Domain.Entities.Indices
 {
     public interface IIndice
     {

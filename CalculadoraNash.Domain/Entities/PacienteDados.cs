@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CalculadoraNash.Dominio.Entities
+namespace CalculadoraNash.Domain.Entities
 {
     public class PacienteDados
     {

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CalculadoraNash.Dominio.Entities;
+using CalculadoraNash.Domain.Entities;
 using CalculadoraNash.ViewModels;
 
 namespace CalculadoraNash.Mappers

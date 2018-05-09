@@ -1,15 +1,15 @@
-namespace CalculadoraNash.Dominio.Migrations
+namespace CalculadoraNash.Infra.Data.Migrations
 {
     using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Mappings.CalculadoraContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Context.CalculadoraContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Mappings.CalculadoraContext context)
+        protected override void Seed(Context.CalculadoraContext context)
         {
             //  This method will be called after migrating to the latest version.
 

@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using CalculadoraNash.Dominio.Entities;
-using CalculadoraNash.Dominio.Entities.Indices;
-using CalculadoraNash.Dominio.Mappings;
+using CalculadoraNash.Domain.Entities;
+using CalculadoraNash.Domain.Entities.Indices;
+using CalculadoraNash.Infra.Data.Context;
 using CalculadoraNash.ViewModels;
 using System;
 using System.Linq;

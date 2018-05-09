@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace CalculadoraNash.Dominio.Entities.Indices
+namespace CalculadoraNash.Domain.Entities.Indices
 {
     public class IndiceFib4 : IIndice
     {

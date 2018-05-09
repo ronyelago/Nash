@@ -260,7 +260,6 @@ C:\Jobs\Nash\CalculadoraNash\bin\roslyn\VBCSCompiler.exe.config
 C:\Jobs\Nash\CalculadoraNash\bin\AntiXssLibrary.dll
 C:\Jobs\Nash\CalculadoraNash\bin\Antlr3.Runtime.dll
 C:\Jobs\Nash\CalculadoraNash\bin\AutoMapper.dll
-C:\Jobs\Nash\CalculadoraNash\bin\CalculadoraNash.Dominio.dll
 C:\Jobs\Nash\CalculadoraNash\bin\EntityFramework.dll
 C:\Jobs\Nash\CalculadoraNash\bin\EntityFramework.SqlServer.dll
 C:\Jobs\Nash\CalculadoraNash\bin\Microsoft.AI.Agent.Intercept.dll
@@ -281,8 +280,6 @@ C:\Jobs\Nash\CalculadoraNash\bin\System.Web.WebPages.Deployment.dll
 C:\Jobs\Nash\CalculadoraNash\bin\System.Web.WebPages.dll
 C:\Jobs\Nash\CalculadoraNash\bin\System.Web.WebPages.Razor.dll
 C:\Jobs\Nash\CalculadoraNash\bin\WebGrease.dll
-C:\Jobs\Nash\CalculadoraNash\bin\CalculadoraNash.Dominio.pdb
-C:\Jobs\Nash\CalculadoraNash\bin\CalculadoraNash.Dominio.dll.config
 C:\Jobs\Nash\CalculadoraNash\bin\Antlr3.Runtime.pdb
 C:\Jobs\Nash\CalculadoraNash\bin\AutoMapper.xml
 C:\Jobs\Nash\CalculadoraNash\bin\EntityFramework.xml
@@ -313,3 +310,8 @@ C:\Jobs\Nash\CalculadoraNash\obj\Debug\CalculadoraNash.csproj.CoreCompileInputs.
 C:\Jobs\Nash\CalculadoraNash\obj\Debug\CalculadoraNash.csproj.CopyComplete
 C:\Jobs\Nash\CalculadoraNash\obj\Debug\CalculadoraNash.dll
 C:\Jobs\Nash\CalculadoraNash\obj\Debug\CalculadoraNash.pdb
+C:\Jobs\Nash\CalculadoraNash\bin\CalculadoraNash.Domain.dll
+C:\Jobs\Nash\CalculadoraNash\bin\CalculadoraNash.Infra.Data.dll
+C:\Jobs\Nash\CalculadoraNash\bin\CalculadoraNash.Domain.pdb
+C:\Jobs\Nash\CalculadoraNash\bin\CalculadoraNash.Infra.Data.pdb
+C:\Jobs\Nash\CalculadoraNash\bin\CalculadoraNash.Infra.Data.dll.config

@@ -1,4 +1,4 @@
-﻿using CalculadoraNash.Dominio.Entities.Indices;
+﻿using CalculadoraNash.Domain.Entities.Indices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

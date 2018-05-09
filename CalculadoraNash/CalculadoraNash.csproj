@@ -205,14 +205,18 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CalculadoraNash.Dominio\CalculadoraNash.Dominio.csproj">
-      <Project>{DAAFC131-EB98-4D5C-87B2-061AE265A008}</Project>
-      <Name>CalculadoraNash.Dominio</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CalculadoraNash.Domain\CalculadoraNash.Domain.csproj">
+      <Project>{7CBBBACE-2BEF-4272-B388-15B253FBDBBD}</Project>
+      <Name>CalculadoraNash.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CalculadoraNash.Infra.Data\CalculadoraNash.Infra.Data.csproj">
+      <Project>{B78642D9-026E-467E-9E17-B3879C15A64E}</Project>
+      <Name>CalculadoraNash.Infra.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

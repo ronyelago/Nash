@@ -1,9 +1,9 @@
-namespace CalculadoraNash.Dominio.Migrations
+namespace CalculadoraNash.Infra.Data.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class creating : DbMigration
+    public partial class inicializando : DbMigration
     {
         public override void Up()
         {
@@ -32,7 +32,7 @@ namespace CalculadoraNash.Dominio.Migrations
                         DataAfericao = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Paciente", t => t.PacienteId, cascadeDelete: true)
+                .ForeignKey("dbo.Paciente", t => t.PacienteId)
                 .Index(t => t.PacienteId);
             
         }

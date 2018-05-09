@@ -1,11 +1,29 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculadoraNash", "CalculadoraNash\CalculadoraNash.csproj", "{51EFF43B-941A-4C55-B500-3F2821C1125D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculadoraNash.Dominio", "CalculadoraNash.Dominio\CalculadoraNash.Dominio.csproj", "{DAAFC131-EB98-4D5C-87B2-061AE265A008}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Presentation", "{7DBB74B1-86F1-4755-80CA-12D9639BF043}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Services", "1 - Services", "{5ED574DE-6C41-4A7C-9E01-B5D247FF9DCB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{F78AB7DD-548D-4A51-AE1D-6AAD51C6391E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{6627127A-501C-45C6-B061-4BED47AF7543}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{A74B2E1F-99C9-4AFB-AA7F-748AF6211B7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculadoraNash.Application", "CalculadoraNash.Application\CalculadoraNash.Application.csproj", "{DA5E8097-AEFA-4661-9F65-5945AB8DC24A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculadoraNash.Domain", "CalculadoraNash.Domain\CalculadoraNash.Domain.csproj", "{7CBBBACE-2BEF-4272-B388-15B253FBDBBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - CrossCutting", "4.1 - CrossCutting", "{1DEB53DA-E688-49CB-BF14-C475A9322978}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - Data", "4.2 - Data", "{66A7BDE6-B6D1-4ED9-B32F-F7CD2DEC12CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculadoraNash.Infra.Data", "CalculadoraNash.Infra.Data\CalculadoraNash.Infra.Data.csproj", "{B78642D9-026E-467E-9E17-B3879C15A64E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,13 +35,29 @@ Global
 		{51EFF43B-941A-4C55-B500-3F2821C1125D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51EFF43B-941A-4C55-B500-3F2821C1125D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51EFF43B-941A-4C55-B500-3F2821C1125D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DAAFC131-EB98-4D5C-87B2-061AE265A008}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DAAFC131-EB98-4D5C-87B2-061AE265A008}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DAAFC131-EB98-4D5C-87B2-061AE265A008}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DAAFC131-EB98-4D5C-87B2-061AE265A008}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA5E8097-AEFA-4661-9F65-5945AB8DC24A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA5E8097-AEFA-4661-9F65-5945AB8DC24A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA5E8097-AEFA-4661-9F65-5945AB8DC24A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA5E8097-AEFA-4661-9F65-5945AB8DC24A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CBBBACE-2BEF-4272-B388-15B253FBDBBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CBBBACE-2BEF-4272-B388-15B253FBDBBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CBBBACE-2BEF-4272-B388-15B253FBDBBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CBBBACE-2BEF-4272-B388-15B253FBDBBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B78642D9-026E-467E-9E17-B3879C15A64E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B78642D9-026E-467E-9E17-B3879C15A64E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B78642D9-026E-467E-9E17-B3879C15A64E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B78642D9-026E-467E-9E17-B3879C15A64E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{51EFF43B-941A-4C55-B500-3F2821C1125D} = {7DBB74B1-86F1-4755-80CA-12D9639BF043}
+		{DA5E8097-AEFA-4661-9F65-5945AB8DC24A} = {F78AB7DD-548D-4A51-AE1D-6AAD51C6391E}
+		{7CBBBACE-2BEF-4272-B388-15B253FBDBBD} = {6627127A-501C-45C6-B061-4BED47AF7543}
+		{1DEB53DA-E688-49CB-BF14-C475A9322978} = {A74B2E1F-99C9-4AFB-AA7F-748AF6211B7A}
+		{66A7BDE6-B6D1-4ED9-B32F-F7CD2DEC12CB} = {A74B2E1F-99C9-4AFB-AA7F-748AF6211B7A}
+		{B78642D9-026E-467E-9E17-B3879C15A64E} = {66A7BDE6-B6D1-4ED9-B32F-F7CD2DEC12CB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5EC0037F-69FB-4003-B2E1-3E05F3F9FD9F}

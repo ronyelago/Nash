@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CalculadoraNash.Dominio.Entities.Indices
+namespace CalculadoraNash.Domain.Entities.Indices
 {
     public class IndiceApri : IIndice
     {

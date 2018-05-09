@@ -1,10 +1,10 @@
-﻿using CalculadoraNash.Dominio.Entities;
+﻿using CalculadoraNash.Domain.Entities;
 using System;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 
-namespace CalculadoraNash.Dominio.Mappings
+namespace CalculadoraNash.Infra.Data.Context
 {
     public class CalculadoraContext : DbContext
     {

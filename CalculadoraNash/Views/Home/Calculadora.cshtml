@@ -167,7 +167,9 @@
 
         $(document).ready(function () {
 
-            Limpar();
+            if ($("#calculado").val() == 0) {
+                Limpar();
+            }
 
             //Exibe modal com os cálculos de cada índice
             if ($('#calculado').val() == '1') {
@@ -217,21 +219,21 @@
 
             $("#Salvar").click(function () {
 
-                var paciente = {
+                var pacienteView = {
                     Nome: "Jovelina",
                     PacienteDados: {
-                        AST: 123,
-                        ALT: 123,
-                        IMC: 123,
-                        Idade: 123,
-                        Plaquetas: 123,
-                        Albumina: 123,
-                        Diabetico: false
+                        AST: $("#PacienteDados_AST").val(),
+                        ALT: $("#PacienteDados_ALT").val(),
+                        IMC: $("#PacienteDados_IMC").val(),
+                        Idade: $("#PacienteDados_Idade").val(),
+                        Plaquetas: $("#PacienteDados_Plaquetas").val(),
+                        Albumina: $("#PacienteDados_Albumina").val(),
+                        Diabetico: $("#PacienteDados_Diabetico").val()
                     }
                 }
 
                 $.post("/Home/Create", {
-                    paciente
+                    pacienteView
                 });
             })
 

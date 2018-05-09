@@ -1,18 +1,15 @@
 namespace CalculadoraNash.Dominio.Migrations
 {
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<CalculadoraNash.Dominio.Mappings.CalculadoraContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Mappings.CalculadoraContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(CalculadoraNash.Dominio.Mappings.CalculadoraContext context)
+        protected override void Seed(Mappings.CalculadoraContext context)
         {
             //  This method will be called after migrating to the latest version.
 

@@ -35,3 +35,4 @@ C:\Jobs\Nash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.pdb
 C:\Jobs\Nash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.csprojAssemblyReference.cache
 C:\Jobs\Nash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.Migrations.creating.resources
 C:\Jobs\Nash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.csproj.GenerateResource.cache
+C:\Jobs\Nash\CalculadoraNash.Dominio\obj\Debug\CalculadoraNash.Dominio.Migrations.correcoes.resources

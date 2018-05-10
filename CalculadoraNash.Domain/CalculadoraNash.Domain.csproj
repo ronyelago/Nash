@@ -40,8 +40,13 @@
     <Compile Include="Interfaces\Repositories\IPacienteDadosRepository.cs" />
     <Compile Include="Interfaces\Repositories\IPacienteRepository.cs" />
     <Compile Include="Interfaces\Repositories\IRepositoryBase.cs" />
+    <Compile Include="Interfaces\Services\IPacienteDadosService.cs" />
+    <Compile Include="Interfaces\Services\IPacienteService.cs" />
     <Compile Include="Interfaces\Services\IServiceBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\PacienteDadosServices.cs" />
+    <Compile Include="Services\PacienteService.cs" />
+    <Compile Include="Services\ServiceBase.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

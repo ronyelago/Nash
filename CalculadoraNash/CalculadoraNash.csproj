@@ -93,15 +93,6 @@
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
-    </Reference>
-    <Reference Include="SimpleInjector, Version=4.2.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
-      <HintPath>..\packages\SimpleInjector.4.2.2\lib\net45\SimpleInjector.dll</HintPath>
-    </Reference>
-    <Reference Include="SimpleInjector.Integration.Web, Version=4.2.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
-      <HintPath>..\packages\SimpleInjector.Integration.Web.4.2.2\lib\net40\SimpleInjector.Integration.Web.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -225,6 +216,10 @@
     <ProjectReference Include="..\CalculadoraNash.Domain\CalculadoraNash.Domain.csproj">
       <Project>{7CBBBACE-2BEF-4272-B388-15B253FBDBBD}</Project>
       <Name>CalculadoraNash.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CalculadoraNash.Infra.Data\CalculadoraNash.Infra.Data.csproj">
+      <Project>{B78642D9-026E-467E-9E17-B3879C15A64E}</Project>
+      <Name>CalculadoraNash.Infra.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

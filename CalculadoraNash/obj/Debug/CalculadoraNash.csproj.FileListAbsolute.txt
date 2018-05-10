@@ -314,9 +314,6 @@ C:\Jobs\Nash\CalculadoraNash\bin\CalculadoraNash.Domain.dll
 C:\Jobs\Nash\CalculadoraNash\bin\CalculadoraNash.Domain.pdb
 C:\Jobs\Nash\CalculadoraNash\bin\CalculadoraNash.Application.dll
 C:\Jobs\Nash\CalculadoraNash\bin\CalculadoraNash.Application.pdb
-C:\Jobs\Nash\CalculadoraNash\bin\Ninject.dll
-C:\Jobs\Nash\CalculadoraNash\bin\Ninject.Web.Common.dll
-C:\Jobs\Nash\CalculadoraNash\bin\Ninject.Web.Common.WebHost.dll
-C:\Jobs\Nash\CalculadoraNash\bin\Ninject.xml
-C:\Jobs\Nash\CalculadoraNash\bin\Ninject.Web.Common.xml
-C:\Jobs\Nash\CalculadoraNash\bin\Ninject.Web.Common.WebHost.xml
+C:\Jobs\Nash\CalculadoraNash\bin\CalculadoraNash.Infra.Data.dll
+C:\Jobs\Nash\CalculadoraNash\bin\CalculadoraNash.Infra.Data.pdb
+C:\Jobs\Nash\CalculadoraNash\bin\CalculadoraNash.Infra.Data.dll.config

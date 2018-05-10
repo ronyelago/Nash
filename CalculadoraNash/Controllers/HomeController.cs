@@ -11,7 +11,7 @@ namespace CalculadoraNash.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly CalculadoraContext context = new CalculadoraContext();
+        private readonly CalculadoraRepository
 
         public ActionResult Calculadora(PacienteViewModel pacienteViewModel)
         {

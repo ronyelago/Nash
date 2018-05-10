@@ -30,8 +30,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AppServiceBase.cs" />
+    <Compile Include="PacienteAppService.cs" />
     <Compile Include="Interfaces\IAppServiceBase.cs" />
+    <Compile Include="Interfaces\IPacienteAppService.cs" />
+    <Compile Include="Interfaces\IPacienteDadosAppService.cs" />
+    <Compile Include="PacienteDadosAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CalculadoraNash.Domain\CalculadoraNash.Domain.csproj">
+      <Project>{7CBBBACE-2BEF-4272-B388-15B253FBDBBD}</Project>
+      <Name>CalculadoraNash.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

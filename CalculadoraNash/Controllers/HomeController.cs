@@ -1,10 +1,9 @@
 ﻿using AutoMapper;
+using CalculadoraNash.Application;
 using CalculadoraNash.Domain.Entities;
 using CalculadoraNash.Domain.Entities.Indices;
-using CalculadoraNash.Infra.Data.Context;
-using CalculadoraNash.Infra.Data.Repositories;
+using CalculadoraNash.Domain.Services;
 using CalculadoraNash.ViewModels;
-using System;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -12,7 +11,12 @@ namespace CalculadoraNash.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly PacienteRepository _pacienteRepository = new PacienteRepository();
+
+        //Resolver com injeção de dependência
+        //public HomeController(IPacienteAppService pacienteAppService)
+        //{
+        //    _appPacienteService = pacienteAppService;
+        //}
 
         public ActionResult Calculadora(PacienteViewModel pacienteViewModel)
         {
@@ -59,7 +63,7 @@ namespace CalculadoraNash.Controllers
 
             paciente.ListaPacienteDados.Add(pacienteDados);
 
-            _pacienteRepository.Add(paciente);
+            //_appPacienteService.Add(paciente);
 
             return View();
         }

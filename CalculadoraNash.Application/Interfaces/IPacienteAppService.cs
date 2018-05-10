@@ -2,7 +2,7 @@
 
 namespace CalculadoraNash.Application.Interfaces
 {
-    interface IPacienteAppService : IAppServiceBase<Paciente>
+    public interface IPacienteAppService : IAppServiceBase<Paciente>
     {
     }
 }

@@ -1,4 +1,4 @@
-﻿using CalculadoraNash.Domain.Interfaces;
+﻿using CalculadoraNash.Domain.Interfaces.Repositories;
 using CalculadoraNash.Infra.Data.Context;
 using System;
 using System.Collections.Generic;

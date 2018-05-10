@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CalculadoraNash.Domain.Interfaces
+namespace CalculadoraNash.Domain.Interfaces.Repositories
 {
     public interface IRepositoryBase<TEntity> where TEntity : class
     {

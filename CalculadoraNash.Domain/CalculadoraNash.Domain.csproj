@@ -37,12 +37,13 @@
     <Compile Include="Entities\Indices\IndiceNafld.cs" />
     <Compile Include="Entities\Paciente.cs" />
     <Compile Include="Entities\PacienteDados.cs" />
-    <Compile Include="Interfaces\IPacienteDadosRepository.cs" />
-    <Compile Include="Interfaces\IPacienteRepository.cs" />
-    <Compile Include="Interfaces\IRepositoryBase.cs" />
+    <Compile Include="Interfaces\Repositories\IPacienteDadosRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IPacienteRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IRepositoryBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Interfaces\Services\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

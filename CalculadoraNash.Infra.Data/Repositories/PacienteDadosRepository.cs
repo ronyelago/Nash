@@ -1,5 +1,5 @@
 ﻿using CalculadoraNash.Domain.Entities;
-using CalculadoraNash.Domain.Interfaces;
+using CalculadoraNash.Domain.Interfaces.Repositories;
 
 namespace CalculadoraNash.Infra.Data.Repositories
 {

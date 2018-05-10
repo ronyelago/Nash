@@ -1,6 +1,6 @@
 ﻿using CalculadoraNash.Domain.Entities;
 
-namespace CalculadoraNash.Domain.Interfaces
+namespace CalculadoraNash.Domain.Interfaces.Repositories
 {
     public interface IPacienteRepository : IRepositoryBase<Paciente>
     {

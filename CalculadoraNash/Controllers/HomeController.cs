@@ -2,6 +2,7 @@
 using CalculadoraNash.Domain.Entities;
 using CalculadoraNash.Domain.Entities.Indices;
 using CalculadoraNash.Infra.Data.Context;
+using CalculadoraNash.Infra.Data.Repositories;
 using CalculadoraNash.ViewModels;
 using System;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace CalculadoraNash.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly CalculadoraRepository
+        private readonly PacienteRepository _pacienteRepository = new PacienteRepository();
 
         public ActionResult Calculadora(PacienteViewModel pacienteViewModel)
         {
@@ -55,12 +56,10 @@ namespace CalculadoraNash.Controllers
         {
             var paciente = Mapper.Map<PacienteViewModel, Paciente>(pacienteView);
             var pacienteDados = Mapper.Map<PacienteDadosViewModel, PacienteDados>(pacienteView.PacienteDados);
-            pacienteDados.DataAfericao = DateTime.Now;
 
             paciente.ListaPacienteDados.Add(pacienteDados);
 
-            context.Pacientes.Add(paciente);
-            context.SaveChanges();
+            _pacienteRepository.Add(paciente);
 
             return View();
         }

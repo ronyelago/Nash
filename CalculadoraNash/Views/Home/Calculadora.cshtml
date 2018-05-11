@@ -1,82 +1,67 @@
 ﻿@model CalculadoraNash.ViewModels.PacienteViewModel
 
-@using (Html.BeginForm(actionName: "Calcular", controllerName: "Home"))
-{
-    @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>Dados do Paciente</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.PacienteDados.AST, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PacienteDados.AST, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PacienteDados.AST, "", new { @class = "text-danger" })
-            </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PacienteDados.ALT, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PacienteDados.ALT, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PacienteDados.ALT, "", new { @class = "text-danger" })
-            </div>
+        <div class="col-lg-6 text-center">
+            <img src="@Url.Content("~/Content/Images/logo-fib.png")">
+            <h2>Calculadora</h2><br>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PacienteDados.IMC, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10 input-group">
-                @Html.EditorFor(model => model.PacienteDados.IMC, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PacienteDados.IMC, "", new { @class = "text-danger" })
-                <span class="input-sm">
-                    <button id="ImcButton" class="btn btn-info" type="button">Calcular IMC</button>
-                </span>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PacienteDados.Diabetico, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.PacienteDados.Diabetico)
-                    @Html.ValidationMessageFor(model => model.PacienteDados.Diabetico, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PacienteDados.Idade, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PacienteDados.Idade, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PacienteDados.Idade, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PacienteDados.Plaquetas, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PacienteDados.Plaquetas, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PacienteDados.Plaquetas, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PacienteDados.Albumina, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PacienteDados.Albumina, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PacienteDados.Albumina, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Calcular" id="Calcular" class="btn btn-success" />
-                <button type="button" id="Limpar" class="btn btn-danger">Limpar</button>
-            </div>
+        <div class="col-lg-3">
         </div>
     </div>
-}
+    <div class="row">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-3">
+            @using (Html.BeginForm(actionName: "Calcular", controllerName: "Home"))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.EditorFor(model => model.PacienteDados.AST, new { htmlAttributes = new { @class = "form-control", @placeholder = "AST" } })
+                    @Html.ValidationMessageFor(model => model.PacienteDados.AST, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.PacienteDados.ALT, new { htmlAttributes = new { @class = "form-control", @placeholder = "ALT" } })
+                    @Html.ValidationMessageFor(model => model.PacienteDados.ALT, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group input-group">
+                    @Html.EditorFor(model => model.PacienteDados.IMC, new { htmlAttributes = new { @class = "form-control", @placeholder = "IMC" } })
+                    @Html.ValidationMessageFor(model => model.PacienteDados.IMC, "", new { @class = "text-danger" })
+                    <span class="input-group-btn">
+                        <button id="ImcButton" class="btn btn-success" type="button">Calcular IMC</button>
+                    </span>
+                </div>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.PacienteDados.Idade, new { htmlAttributes = new { @class = "form-control", @placeholder = "IDADE" } })
+                    @Html.ValidationMessageFor(model => model.PacienteDados.Idade, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.EditorFor(model => model.PacienteDados.Plaquetas, new { htmlAttributes = new { @class = "form-control", @placeholder = "PLAQUETAS" } })
+                    @Html.ValidationMessageFor(model => model.PacienteDados.Plaquetas, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.PacienteDados.Albumina, new { htmlAttributes = new { @class = "form-control", @placeholder = "ALBUMINA" } })
+                    @Html.ValidationMessageFor(model => model.PacienteDados.Albumina, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label class="diab"><b> Diabético? </b></label>
+                    @Html.EditorFor(model => model.PacienteDados.Diabetico, new { htmlAttributes = new { @class = "checkbox" } })
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Calcular" id="Calcular" class="btn btn-success" />
+                        <button type="button" id="Limpar" class="btn btn-danger">Limpar</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
 
 @*modal de resultado*@
 <div class="modal fade" id="ResultadosModal" tabindex="-1">

@@ -63,13 +63,16 @@
   font-weight: normal;
   font-style: normal; }
 
-body{
-	font-family:'museosansregular100';
+h2 {
+    font-weight: 500;
+}
+
+body {
+  font-family:'museosansregular100';
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
-  background-image: url("../image/bg.png"); /* fallback */
+  background-image: url("Images/bg.png"); /* fallback */
   background-repeat: no-repeat;
   background-size:cover;
-  font-color:#FFFFFF;
 
 }
 h2 b {
@@ -128,7 +131,8 @@ fieldset[disabled] .btn-sample.active {
   background-color: #ffffff; 
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="number"] {
     border: 0 solid transparent !important;
     border-top: none;
     border-bottom: 2px solid #DDD;

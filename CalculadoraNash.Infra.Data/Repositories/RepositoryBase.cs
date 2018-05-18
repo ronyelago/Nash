@@ -14,7 +14,7 @@ namespace CalculadoraNash.Infra.Data.Repositories
         public void Add(TEntity obj)
         {
             Db.Set<TEntity>().Add(obj);
-            Db.SaveChanges();
+            Db.SaveChanges(); ; ; ;
         }
 
         public IEnumerable<TEntity> GetAll()
